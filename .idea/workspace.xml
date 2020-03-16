@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0e967ec-0f43-4004-821a-6261d29d8e2a" name="Default Changelist" comment="">
+    <list default="true" id="b0e967ec-0f43-4004-821a-6261d29d8e2a" name="Default Changelist" comment="Redefined project structure to accommodate new requirements.">
+      <change afterPath="$PROJECT_DIR$/resources/db.props" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/server/PropsParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Main.java" afterDir="false" />
     </list>
     <list id="b44beb3b-e512-4c23-97fd-f90518a74248" name="Revert &quot;Redefined project structure to accommodate new requirements.&quot;" comment="Revert &quot;Redefined project structure to accommodate new requirements.&quot;&#10;&#10;This reverts commit 89f38874" />
     <option name="SHOW_DIALOG" value="false" />
@@ -108,6 +112,9 @@
     <option name="localTasksCounter" value="5" />
     <servers />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName="*.props" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
@@ -134,30 +141,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="535" y="293" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584332671420" />
-    <state x="523" y="197" key="CommitChangelistDialog2" timestamp="1584336699062">
+    <state x="523" y="197" key="CommitChangelistDialog2" timestamp="1584337870633">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="523" y="197" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584336699062" />
+    <state x="523" y="197" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584337870633" />
     <state x="330" y="213" width="1248" height="570" key="DiffContextDialog" timestamp="1584336796723">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="330" y="213" width="1248" height="570" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584336796723" />
-    <state width="1388" height="190" key="GridCell.Tab.0.bottom" timestamp="1584336763068">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1584355257712">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1388" height="190" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584336763068" />
-    <state width="1388" height="190" key="GridCell.Tab.0.center" timestamp="1584336763068">
+    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584355257712" />
+    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1584355257712">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1388" height="190" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584336763068" />
-    <state width="1388" height="190" key="GridCell.Tab.0.left" timestamp="1584336763067">
+    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584355257712" />
+    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1584355257712">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1388" height="190" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584336763067" />
-    <state width="1388" height="190" key="GridCell.Tab.0.right" timestamp="1584336763068">
+    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584355257712" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1584355257712">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1388" height="190" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584336763068" />
+    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584355257712" />
+    <state width="1877" height="139" key="GridCell.Tab.1.bottom" timestamp="1584355056123">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="139" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584355056123" />
+    <state width="1877" height="139" key="GridCell.Tab.1.center" timestamp="1584355056123">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="139" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584355056123" />
+    <state width="1877" height="139" key="GridCell.Tab.1.left" timestamp="1584355056123">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="139" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584355056123" />
+    <state width="1877" height="139" key="GridCell.Tab.1.right" timestamp="1584355056123">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="139" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584355056123" />
     <state x="434" y="76" key="SettingsEditor" timestamp="1584336936034">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -174,10 +197,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="330" y="213" width="1248" height="570" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584336856355" />
-    <state x="662" y="325" key="com.intellij.ide.util.TipDialog" timestamp="1584336775664">
+    <state x="662" y="325" key="com.intellij.ide.util.TipDialog" timestamp="1584352954921">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="662" y="325" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584336775664" />
+    <state x="662" y="325" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584352954921" />
     <state x="337" y="124" key="new project wizard" timestamp="1584331943469">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
