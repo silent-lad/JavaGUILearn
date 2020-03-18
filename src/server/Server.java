@@ -1,6 +1,16 @@
+/***
+ * Server class
+ * CAB302 QUT 2020
+ */
+
 package server;
 
-public class Main
+/***
+ * The Server class contains the logic for passing data between the
+ * database and the control panel as well as between the control
+ * panel and the viewer.
+ */
+public class Server
 {
     public static void main(String[] args)
     {

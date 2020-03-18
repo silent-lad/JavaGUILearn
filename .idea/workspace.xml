@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0e967ec-0f43-4004-821a-6261d29d8e2a" name="Default Changelist" comment="Redefined project structure to accommodate new requirements.">
-      <change afterPath="$PROJECT_DIR$/resources/db.props" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/server/PropsParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controlpanel/ControlPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/viewer/Viewer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlpanel/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server/PropsParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/server/PropsParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/viewer/Main.java" beforeDir="false" />
     </list>
     <list id="b44beb3b-e512-4c23-97fd-f90518a74248" name="Revert &quot;Redefined project structure to accommodate new requirements.&quot;" comment="Revert &quot;Redefined project structure to accommodate new requirements.&quot;&#10;&#10;This reverts commit 89f38874" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,28 +40,30 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.28318584" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
-  <component name="RunManager" selected="Application.Server">
+  <component name="RunManager" selected="Application.Control Panel">
     <configuration name="Control Panel" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="controlpanel.Main" />
+      <option name="MAIN_CLASS_NAME" value="controlpanel.ControlPanel" />
       <module name="CAB302_Assignment" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="Server" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="server.Main" />
+      <option name="MAIN_CLASS_NAME" value="server.Server" />
       <module name="CAB302_Assignment" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="Viewer" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="viewer.Main" />
+      <option name="MAIN_CLASS_NAME" value="viewer.Viewer" />
       <module name="CAB302_Assignment" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -69,6 +74,18 @@
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.Viewer" />
     </list>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -149,22 +166,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="330" y="213" width="1248" height="570" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584336796723" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1584355257712">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1584527111626">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584355257712" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1584355257712">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584527111626" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1584527111626">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584355257712" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1584355257712">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584527111626" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1584527111626">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584355257712" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1584355257712">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584527111626" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1584527111626">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584355257712" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584527111626" />
     <state width="1877" height="139" key="GridCell.Tab.1.bottom" timestamp="1584355056123">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -197,13 +214,17 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="330" y="213" width="1248" height="570" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584336856355" />
-    <state x="662" y="325" key="com.intellij.ide.util.TipDialog" timestamp="1584352954921">
+    <state x="662" y="325" key="com.intellij.ide.util.TipDialog" timestamp="1584525590889">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="662" y="325" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584352954921" />
+    <state x="662" y="325" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584525590889" />
     <state x="337" y="124" key="new project wizard" timestamp="1584331943469">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="337" y="124" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1584331943469" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1584523260051">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584523260051" />
   </component>
 </project>

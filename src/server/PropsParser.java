@@ -1,3 +1,8 @@
+/***
+ * PropsParser class
+ * CAB302 QUT 2020
+ */
+
 package server;
 
 import java.io.FileReader;
@@ -9,6 +14,9 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/***
+ * The PropsParser class is used by server Main class.
+ */
 public class PropsParser
 {
     // The "names" found in the db.props file
