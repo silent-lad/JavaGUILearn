@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0e967ec-0f43-4004-821a-6261d29d8e2a" name="Default Changelist" comment="Redefined project structure to accommodate new requirements.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controlpanel/ControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlpanel/ControlPanel.java" afterDir="false" />
-    </list>
+    <list default="true" id="b0e967ec-0f43-4004-821a-6261d29d8e2a" name="Default Changelist" comment="Redefined project structure to accommodate new requirements." />
     <list id="b44beb3b-e512-4c23-97fd-f90518a74248" name="Revert &quot;Redefined project structure to accommodate new requirements.&quot;" comment="Revert &quot;Redefined project structure to accommodate new requirements.&quot;&#10;&#10;This reverts commit 89f38874" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,10 +205,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="330" y="213" width="1248" height="570" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584336856355" />
-    <state x="662" y="325" key="com.intellij.ide.util.TipDialog" timestamp="1584589162462">
+    <state x="662" y="325" key="com.intellij.ide.util.TipDialog" timestamp="1584594438451">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="662" y="325" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584589162462" />
+    <state x="662" y="325" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584594438451" />
     <state x="337" y="124" key="new project wizard" timestamp="1584331943469">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
