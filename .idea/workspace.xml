@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0e967ec-0f43-4004-821a-6261d29d8e2a" name="Default Changelist" comment="Redefined project structure to accommodate new requirements." />
+    <list default="true" id="b0e967ec-0f43-4004-821a-6261d29d8e2a" name="Default Changelist" comment="Redefined project structure to accommodate new requirements.">
+      <change afterPath="$PROJECT_DIR$/src/controlpanel/CreateBillboard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controlpanel/Dashboard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controlpanel/EditBillboard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controlpanel/EditUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controlpanel/ListBillboard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controlpanel/ScheduleBillboard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlpanel/ControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlpanel/ControlPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlpanel/LoginWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlpanel/LoginWindow.java" afterDir="false" />
+    </list>
     <list id="b44beb3b-e512-4c23-97fd-f90518a74248" name="Revert &quot;Redefined project structure to accommodate new requirements.&quot;" comment="Revert &quot;Redefined project structure to accommodate new requirements.&quot;&#10;&#10;This reverts commit 89f38874" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,12 +46,25 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.28318584" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RunManager" selected="Application.Control Panel">
     <configuration name="Control Panel" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="controlpanel.ControlPanel" />
       <module name="CAB302_Assignment" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Dashboard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="controlpanel.Dashboard" />
+      <module name="CAB302_Assignment" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controlpanel.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -64,7 +87,13 @@
       <item itemvalue="Application.Control Panel" />
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.Viewer" />
+      <item itemvalue="Application.Dashboard" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Dashboard" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -157,22 +186,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="330" y="213" width="1248" height="570" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584336796723" />
-    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1584594217684">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1398" height="116" key="GridCell.Tab.0.bottom" timestamp="1584819185953">
+      <screen x="0" y="23" width="1440" height="819" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584594217684" />
-    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1584594217684">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1398" height="116" key="GridCell.Tab.0.bottom/0.23.1440.819@0.23.1440.819" timestamp="1584819185953" />
+    <state width="1398" height="116" key="GridCell.Tab.0.center" timestamp="1584819185949">
+      <screen x="0" y="23" width="1440" height="819" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584594217684" />
-    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1584594217684">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1398" height="116" key="GridCell.Tab.0.center/0.23.1440.819@0.23.1440.819" timestamp="1584819185949" />
+    <state width="1398" height="116" key="GridCell.Tab.0.left" timestamp="1584819185948">
+      <screen x="0" y="23" width="1440" height="819" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584594217684" />
-    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1584594217684">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1398" height="116" key="GridCell.Tab.0.left/0.23.1440.819@0.23.1440.819" timestamp="1584819185948" />
+    <state width="1398" height="116" key="GridCell.Tab.0.right" timestamp="1584819185950">
+      <screen x="0" y="23" width="1440" height="819" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584594217684" />
+    <state width="1398" height="116" key="GridCell.Tab.0.right/0.23.1440.819@0.23.1440.819" timestamp="1584819185950" />
     <state width="1877" height="139" key="GridCell.Tab.1.bottom" timestamp="1584355056123">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -189,10 +222,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="139" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584355056123" />
-    <state x="434" y="76" key="SettingsEditor" timestamp="1584336936034">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="148" y="77" key="SettingsEditor" timestamp="1584770332953">
+      <screen x="0" y="23" width="1440" height="819" />
     </state>
     <state x="434" y="76" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1584336936034" />
+    <state x="148" y="77" key="SettingsEditor/0.23.1440.819@0.23.1440.819" timestamp="1584770332953" />
     <state x="801" y="420" key="VCS.ChangelistChooser" timestamp="1584336549584">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -205,10 +239,11 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="330" y="213" width="1248" height="570" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584336856355" />
-    <state x="662" y="325" key="com.intellij.ide.util.TipDialog" timestamp="1584594438451">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="497" y="279" key="com.intellij.ide.util.TipDialog" timestamp="1584677539988">
+      <screen x="0" y="23" width="1440" height="819" />
     </state>
     <state x="662" y="325" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584594438451" />
+    <state x="497" y="279" key="com.intellij.ide.util.TipDialog/0.23.1440.819@0.23.1440.819" timestamp="1584677539988" />
     <state x="337" y="124" key="new project wizard" timestamp="1584331943469">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
