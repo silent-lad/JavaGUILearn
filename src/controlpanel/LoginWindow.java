@@ -59,8 +59,11 @@ class LoginWindow extends JFrame implements ActionListener {
         }
 
         public void actionPerformed(ActionEvent ae) {
+//                LOGIN LOGIC
                 String username = text1.getText();
                 String password = text2.getText();
+
+
 
                 if (username.equals("") && password.equals("")) {
                         String token = "sdfasdf";
@@ -74,7 +77,7 @@ class LoginWindow extends JFrame implements ActionListener {
                 }
         }
 }
-
+//https://stackoverflow.com/questions/2860943/how-can-i-hash-a-password-in-java
 
 //buttons = new Button [5];
 //
