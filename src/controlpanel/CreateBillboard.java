@@ -28,7 +28,7 @@ class CreateBillboard extends JPanel implements ActionListener{
         messageField.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         informationLabel = new JLabel();
-        informationLabel.setText("Message:");
+        informationLabel.setText("Information:");
         informationLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
         informationField = new JTextArea();
         informationField.setMaximumSize( messageField.getPreferredSize() );
@@ -39,10 +39,12 @@ class CreateBillboard extends JPanel implements ActionListener{
         imageTypeLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         urlImage = new JRadioButton("url");
-        urlImage.setAlignmentX(Component.RIGHT_ALIGNMENT);
+        urlImage.setAlignmentX(Component.CENTER_ALIGNMENT);
         encodedImage = new JRadioButton("enocoded");
-        encodedImage.setAlignmentX(Component.LEFT_ALIGNMENT);
-
+        encodedImage.setAlignmentX(Component.CENTER_ALIGNMENT);
+        ButtonGroup group = new ButtonGroup();
+        group.add(urlImage);
+        group.add(encodedImage);
 
         imageString = new JLabel();
         imageString.setText("Image:");
@@ -56,8 +58,6 @@ class CreateBillboard extends JPanel implements ActionListener{
 
         previewButton = new JButton("Preview");
         previewButton.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-        panel = new JPanel();
 
 
         add(heading);
@@ -78,7 +78,7 @@ class CreateBillboard extends JPanel implements ActionListener{
         add(createButton);
         add(previewButton);
         setLayout(
-                new BoxLayout(panel, BoxLayout.PAGE_AXIS)
+                new BoxLayout(this, BoxLayout.PAGE_AXIS)
         );
         setSize(500,500);
         setVisible(true);

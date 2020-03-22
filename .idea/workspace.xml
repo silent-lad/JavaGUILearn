@@ -4,7 +4,7 @@
     <list default="true" id="b0e967ec-0f43-4004-821a-6261d29d8e2a" name="Default Changelist" comment="Redefined project structure to accommodate new requirements.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controlpanel/CreateBillboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlpanel/CreateBillboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controlpanel/LoginWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlpanel/LoginWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controlpanel/ListBillboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlpanel/ListBillboard.java" afterDir="false" />
     </list>
     <list id="b44beb3b-e512-4c23-97fd-f90518a74248" name="Revert &quot;Redefined project structure to accommodate new requirements.&quot;" comment="Revert &quot;Redefined project structure to accommodate new requirements.&quot;&#10;&#10;This reverts commit 89f38874" />
     <option name="SHOW_DIALOG" value="false" />
@@ -180,26 +180,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="330" y="213" width="1248" height="570" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584336796723" />
-    <state width="1398" height="116" key="GridCell.Tab.0.bottom" timestamp="1584862961595">
+    <state width="1398" height="116" key="GridCell.Tab.0.bottom" timestamp="1584896393975">
       <screen x="0" y="23" width="1440" height="819" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584594217684" />
-    <state width="1398" height="116" key="GridCell.Tab.0.bottom/0.23.1440.819@0.23.1440.819" timestamp="1584862961595" />
-    <state width="1398" height="116" key="GridCell.Tab.0.center" timestamp="1584862961593">
+    <state width="1398" height="116" key="GridCell.Tab.0.bottom/0.23.1440.819@0.23.1440.819" timestamp="1584896393975" />
+    <state width="1398" height="116" key="GridCell.Tab.0.center" timestamp="1584896393974">
       <screen x="0" y="23" width="1440" height="819" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584594217684" />
-    <state width="1398" height="116" key="GridCell.Tab.0.center/0.23.1440.819@0.23.1440.819" timestamp="1584862961593" />
-    <state width="1398" height="116" key="GridCell.Tab.0.left" timestamp="1584862961591">
+    <state width="1398" height="116" key="GridCell.Tab.0.center/0.23.1440.819@0.23.1440.819" timestamp="1584896393974" />
+    <state width="1398" height="116" key="GridCell.Tab.0.left" timestamp="1584896393974">
       <screen x="0" y="23" width="1440" height="819" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584594217684" />
-    <state width="1398" height="116" key="GridCell.Tab.0.left/0.23.1440.819@0.23.1440.819" timestamp="1584862961591" />
-    <state width="1398" height="116" key="GridCell.Tab.0.right" timestamp="1584862961594">
+    <state width="1398" height="116" key="GridCell.Tab.0.left/0.23.1440.819@0.23.1440.819" timestamp="1584896393974" />
+    <state width="1398" height="116" key="GridCell.Tab.0.right" timestamp="1584896393975">
       <screen x="0" y="23" width="1440" height="819" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584594217684" />
-    <state width="1398" height="116" key="GridCell.Tab.0.right/0.23.1440.819@0.23.1440.819" timestamp="1584862961594" />
+    <state width="1398" height="116" key="GridCell.Tab.0.right/0.23.1440.819@0.23.1440.819" timestamp="1584896393975" />
     <state width="1877" height="139" key="GridCell.Tab.1.bottom" timestamp="1584355056123">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
