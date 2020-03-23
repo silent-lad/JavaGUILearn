@@ -60,7 +60,7 @@ class LoginWindow extends JFrame implements ActionListener {
                 loginPanel.setSize(500,500);
                 loginPanel.setVisible(true);
                 add(loginPanel);
-
+                setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 setTitle("LOGIN FORM");
 
         }

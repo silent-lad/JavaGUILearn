@@ -18,6 +18,8 @@ class Dashboard extends JFrame implements ActionListener {
     static JMenu billboardMenu;
     // User Menu
     static JMenu userMenu;
+    // Logout Button
+    static JMenu logoutMenu;
 
     static String userToken;
 
@@ -25,6 +27,8 @@ class Dashboard extends JFrame implements ActionListener {
     static JMenuItem createBillboardMenuOption, editBillboardMenuOption, listBillboardMenuOption, scheduleBillboardMenuOption;
     //User Menu Options
     static JMenuItem editUserMenuOption,createUserMenuOption;
+    // Logout button
+    static JMenuItem logoutButton;
 
     // a label
     static JLabel l;
@@ -64,6 +68,7 @@ class Dashboard extends JFrame implements ActionListener {
         // create both the menu menu
         billboardMenu = new JMenu("Billboard");
         userMenu = new JMenu("User");
+        logoutMenu = new JMenu("Logout");
 
         // create menuitems
         createBillboardMenuOption = new JMenuItem("Create Billboard");
@@ -72,6 +77,7 @@ class Dashboard extends JFrame implements ActionListener {
         scheduleBillboardMenuOption = new JMenuItem("Schedule Billboard");
         editUserMenuOption = new JMenuItem("Edit User");
         createUserMenuOption = new JMenuItem("Create User");
+        logoutButton = new JMenuItem("Logout User");
 
         // add ActionListener to menuItems
         createBillboardMenuOption.addActionListener(this);
@@ -80,6 +86,8 @@ class Dashboard extends JFrame implements ActionListener {
         scheduleBillboardMenuOption.addActionListener(this);
         editUserMenuOption.addActionListener(this);
         createUserMenuOption.addActionListener(this);
+
+        logoutButton.addActionListener(new LogoutActionListener());
 
         // add menu options to menu
         billboardMenu.add(createBillboardMenuOption);
@@ -90,9 +98,12 @@ class Dashboard extends JFrame implements ActionListener {
         userMenu.add(editUserMenuOption);
         userMenu.add(createUserMenuOption);
 
+        logoutMenu.add(logoutButton);
+
         // add menu to menu bar
         menuBar.add(billboardMenu);
         menuBar.add(userMenu);
+        menuBar.add(logoutMenu);
 
         // add menubar to frame
         setJMenuBar(menuBar);
@@ -107,6 +118,7 @@ class Dashboard extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent menuEvent)
     {
         String s = menuEvent.getActionCommand();
+        System.out.println(s);
         // Remove exisitng panel from the frame.
         getContentPane().removeAll();
 
@@ -164,6 +176,18 @@ class Dashboard extends JFrame implements ActionListener {
         revalidate();
         repaint();
 
+    }
+
+//    Action Listener for Logout menu option
+    private class LogoutActionListener implements ActionListener {
+        public void actionPerformed(ActionEvent e) {
+            // Logout Logic here
+            // Delete the token and just change the panel back to Login as down below
+            new LoginWindow();
+            // Disposing the Dashboard JFrame as it's work is done.
+            //dispose();
+
+        }
     }
 
 }
