@@ -16,28 +16,33 @@ class EditUser extends JPanel{
         //Fetch the users from the db; and populate the local variables
         GetUsers();
 
-        setSize(8 00, 400);
+        setSize(800, 400);
         setLayout(new GridLayout(13, 7, 10, 0));
+        setBorder(BorderFactory.createEmptyBorder(2,2,2,2));
+
         for (int row = 0; row < 13; row++) {
-            //ButtonGroup bg = new ButtonGroup();
             for (int col = 0; col < 7; col++) {
                 if (row == 0) {
-                    add(new JLabel(permissions[col]));
+                    JLabel TopRowLabel = new JLabel(permissions[col]);
+                    TopRowLabel.setBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, Color.BLACK));
+                    add(TopRowLabel,SwingConstants.CENTER);
                 } else {
                     if (col == 0) {
-                        add(new JLabel(users[row - 1]));
+                        JLabel TopColLabel = new JLabel(users[row - 1],SwingConstants.CENTER);
+                        TopColLabel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+                        add(TopColLabel);
                     } else if(col<5) {
                         form[row - 1][col - 1] = new JCheckBox();
-                        //bg.add(form[row - 1][col - 1]);
                         add(form[row - 1][col - 1]);
+
                     } else if(col ==5){
                          add(new JButton("DELETE"));
                     } else {
                         if(true) //check if the user is himself or admin
                         {
-                            add(new JButton("EDIT PASSWORDS"));
+                            add(new JButton("EDIT USER"));
                         }else {
-                            add(new JLabel("ACCESS DENIED"));
+                            add(new JLabel("ACCESS DENIED"),SwingConstants.CENTER);
                         }
 
                     }

@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 
 /***
- * The Dahboard class extends Jpanel as it will be shown on Dashboard JFrame
+ * The CreateBillboard class extends Jpanel as it will be shown on Dashboard JFrame
  * well as GUI functions.
  * implements ActionListener to listen for form submission
  */

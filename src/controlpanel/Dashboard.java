@@ -24,7 +24,7 @@ class Dashboard extends JFrame implements ActionListener {
     //Billboard Menu options
     static JMenuItem createBillboardMenuOption, editBillboardMenuOption, listBillboardMenuOption, scheduleBillboardMenuOption;
     //User Menu Options
-    static JMenuItem editUserMenuOption;
+    static JMenuItem editUserMenuOption,createUserMenuOption;
 
     // a label
     static JLabel l;
@@ -71,6 +71,7 @@ class Dashboard extends JFrame implements ActionListener {
         listBillboardMenuOption = new JMenuItem("List Billboard");
         scheduleBillboardMenuOption = new JMenuItem("Schedule Billboard");
         editUserMenuOption = new JMenuItem("Edit User");
+        createUserMenuOption = new JMenuItem("Create User");
 
         // add ActionListener to menuItems
         createBillboardMenuOption.addActionListener(this);
@@ -78,6 +79,7 @@ class Dashboard extends JFrame implements ActionListener {
         listBillboardMenuOption.addActionListener(this);
         scheduleBillboardMenuOption.addActionListener(this);
         editUserMenuOption.addActionListener(this);
+        createUserMenuOption.addActionListener(this);
 
         // add menu options to menu
         billboardMenu.add(createBillboardMenuOption);
@@ -86,6 +88,7 @@ class Dashboard extends JFrame implements ActionListener {
         billboardMenu.add(scheduleBillboardMenuOption);
 
         userMenu.add(editUserMenuOption);
+        userMenu.add(createUserMenuOption);
 
         // add menu to menu bar
         menuBar.add(billboardMenu);
@@ -107,6 +110,7 @@ class Dashboard extends JFrame implements ActionListener {
         // Remove exisitng panel from the frame.
         getContentPane().removeAll();
 
+        setSize(800,500);
         // Switch case statement decides which new panel is to be added in the Dashboard JFrame
         switch(s){
             case "Create Billboard" :
@@ -136,13 +140,21 @@ class Dashboard extends JFrame implements ActionListener {
                 add(BorderLayout.CENTER, new JScrollPane(currentPanel));
                 //add(currentPanel);
                 setTitle("List Billboard");
-                break;
+            break;
             case "Edit User" :
                 currentPanel = new EditUser();
                 currentPanel.setVisible(true);
                 setLayout(new BorderLayout());
+                setSize(800,500);
                 add(BorderLayout.CENTER, new JScrollPane(currentPanel));
                 setTitle("Edit User");
+            break;
+            case "Create User" :
+                currentPanel = new CreateUser(userToken);
+                currentPanel.setVisible(true);
+                setLayout(new BorderLayout());
+                add(BorderLayout.CENTER, new JScrollPane(currentPanel));
+                setTitle("Create User");
             break;
             default:
                 break;
