@@ -33,6 +33,7 @@ public class ControlPanel {
      * @param args
      */
     public static void main(String[] args) {
+        // Login Window will be the first screen and if login is passed new JFrame Dashboard will initialised.
         LoginWindow frame = new LoginWindow();
         frame.setSize(500, 250);
         frame.setLocationRelativeTo(null);

@@ -7,9 +7,9 @@ import java.awt.event.*;
 
 class LoginWindow extends JFrame implements ActionListener {
         JButton SUBMIT;
-        JPanel panel;
-        JLabel label1, label2, heading;
-        final JTextField text1, text2;
+        JPanel loginPanel;
+        JLabel usernameLabel, passwordLabel, heading;
+        final JTextField usernameField, passwordField;
 
         LoginWindow() {
                 heading = new JLabel();
@@ -17,71 +17,73 @@ class LoginWindow extends JFrame implements ActionListener {
                 heading.setFont(new Font("Arial", Font.PLAIN, 25));
                 heading.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-                label1 = new JLabel();
-                label1.setText("Username:");
-                label1.setAlignmentX(Component.CENTER_ALIGNMENT);
-                text1 = new JTextField(15);
-                text1.setMaximumSize( text1.getPreferredSize() );
-                text1.setAlignmentX(Component.CENTER_ALIGNMENT);
+                usernameLabel = new JLabel();
+                usernameLabel.setText("Username:");
+                usernameLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+                usernameField = new JTextField(15);
+                usernameField.setMaximumSize( usernameField.getPreferredSize() );
+                usernameField.setAlignmentX(Component.CENTER_ALIGNMENT);
 
+                // Password Label and Field
+                passwordLabel = new JLabel();
+                passwordLabel.setText("Password:");
+                passwordLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+                passwordField = new JPasswordField(15);
+                passwordField.setMaximumSize( passwordField.getPreferredSize() );
+                passwordField.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-                label2 = new JLabel();
-                label2.setText("Password:");
-                label2.setAlignmentX(Component.CENTER_ALIGNMENT);
-                text2 = new JPasswordField(15);
-                text2.setMaximumSize( text2.getPreferredSize() );
-                text2.setAlignmentX(Component.CENTER_ALIGNMENT);
-
+                //  Submit Button config
                 SUBMIT = new JButton("SUBMIT");
                 SUBMIT.setAlignmentX(Component.CENTER_ALIGNMENT);
-
-                panel = new JPanel();
-
-
-                panel.add(heading);
-                panel.add(Box.createRigidArea(new Dimension(0,20)));
-                panel.add(label1);
-                panel.add(text1);
-                panel.add(Box.createRigidArea(new Dimension(0,10)));
-                panel.add(label2);
-                panel.add(text2);
-                panel.add(Box.createRigidArea(new Dimension(0,20)));
-                panel.add(SUBMIT);
-                panel.setLayout(
-                        new BoxLayout(panel, BoxLayout.PAGE_AXIS)
-                );
-                panel.setSize(500,500);
-                panel.setVisible(true);
-                add(panel);
+                //Addign action listener to fire actionPerformed function.
                 SUBMIT.addActionListener(this);
+
+                // Primary panel for the current JFrame.
+                loginPanel = new JPanel();
+
+                // Box Layout starts from here.
+                loginPanel.add(heading);
+                // Create Rigid Area for the vertical margin between components
+                loginPanel.add(Box.createRigidArea(new Dimension(0,20)));
+                loginPanel.add(usernameLabel);
+                loginPanel.add(usernameField);
+                loginPanel.add(Box.createRigidArea(new Dimension(0,10)));
+                loginPanel.add(passwordLabel);
+                loginPanel.add(passwordField);
+                loginPanel.add(Box.createRigidArea(new Dimension(0,20)));
+                loginPanel.add(SUBMIT);
+
+                // Setting Box Layout
+                loginPanel.setLayout(
+                        new BoxLayout(loginPanel, BoxLayout.PAGE_AXIS)
+                );
+                loginPanel.setSize(500,500);
+                loginPanel.setVisible(true);
+                add(loginPanel);
+
                 setTitle("LOGIN FORM");
 
         }
 
         public void actionPerformed(ActionEvent ae) {
-//                LOGIN LOGIC
-                String username = text1.getText();
-                String password = text2.getText();
+                //LOGIN LOGIC
+                String username = usernameField.getText();
+                String password = passwordField.getText();
 
-
+                //Hashing logic here
 
                 if (username.equals("") && password.equals("")) {
                         String token = "sdfasdf";
+                        //passing mock token to Dashboard, so that it can make requests to server
                         new Dashboard(token);
+                        // Disposing the Login JFrame as it's work is done.
                         dispose();
 
                 } else {
+                        // Logic for error dialogbox which shows if login fails with custom message.
                         System.out.println("enter the valid username and password");
                         JOptionPane.showMessageDialog(this, "Incorrect login or password", "Error",
                                         JOptionPane.ERROR_MESSAGE);
                 }
         }
 }
-//https://stackoverflow.com/questions/2860943/how-can-i-hash-a-password-in-java
-
-//buttons = new Button [5];
-//
-//        for (int i = 0;i<5;i++) {
-//        buttons[i] = new Button ("Button " + (i + 1));
-//        add (buttons[i]);
-//        }

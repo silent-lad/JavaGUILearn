@@ -34,7 +34,7 @@ class ListBillboard extends JPanel {
 //                }
 //            }
 //        }
-        CreateBillboard test = new CreateBillboard();
+        CreateBillboard test = new CreateBillboard("");
         add(test);
     }
 }

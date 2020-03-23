@@ -4,21 +4,33 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+/***
+ * The Dahboard class extends Jpanel as it will be shown on Dashboard JFrame
+ * well as GUI functions.
+ * implements ActionListener to listen for form submission
+ */
 class CreateBillboard extends JPanel implements ActionListener{
-    JButton SUBMIT;
-    JPanel panel;
-    JLabel heading, messageLabel, imageTypeLabel,imageString,informationLabel;
+
+    JLabel formHeading, messageLabel, imageTypeLabel,imageString,informationLabel;
     JTextField messageField,imageStringField;
     JTextArea informationField;
     JRadioButton urlImage,encodedImage;
     JButton createButton, previewButton;
+    String userToken;
 
-    CreateBillboard() {
+    /***
+     * The Dahboard class extends Jpanel as it will be shown on Dashboard JFrame
+     * well as GUI functions.
+     * implements ActionListener to listen for form submission
+     */
+    CreateBillboard(String token) {
 
-        heading = new JLabel();
-        heading.setText("Create Billboard");
-        heading.setFont(new Font("Arial", Font.PLAIN, 25));
-        heading.setAlignmentX(Component.CENTER_ALIGNMENT);
+        userToken = token;
+
+        formHeading = new JLabel();
+        formHeading.setText("Create Billboard");
+        formHeading.setFont(new Font("Arial", Font.PLAIN, 25));
+        formHeading.setAlignmentX(Component.CENTER_ALIGNMENT);
 
         messageLabel = new JLabel();
         messageLabel.setText("Message:");
@@ -42,6 +54,7 @@ class CreateBillboard extends JPanel implements ActionListener{
         urlImage.setAlignmentX(Component.CENTER_ALIGNMENT);
         encodedImage = new JRadioButton("enocoded");
         encodedImage.setAlignmentX(Component.CENTER_ALIGNMENT);
+        // Combining these 2 radio buttons in a group so if one gets selected other one gets unselected.
         ButtonGroup group = new ButtonGroup();
         group.add(urlImage);
         group.add(encodedImage);
@@ -59,8 +72,8 @@ class CreateBillboard extends JPanel implements ActionListener{
         previewButton = new JButton("Preview");
         previewButton.setAlignmentX(Component.CENTER_ALIGNMENT);
 
-
-        add(heading);
+        // Creating the layout.
+        add(formHeading);
         add(Box.createRigidArea(new Dimension(0,20)));
         add(messageLabel);
         add(messageField);
@@ -77,6 +90,7 @@ class CreateBillboard extends JPanel implements ActionListener{
         add(Box.createRigidArea(new Dimension(0,20)));
         add(createButton);
         add(previewButton);
+        // Using Boxlayout.
         setLayout(
                 new BoxLayout(this, BoxLayout.PAGE_AXIS)
         );
@@ -87,7 +101,8 @@ class CreateBillboard extends JPanel implements ActionListener{
 
     }
     public void actionPerformed(ActionEvent ae) {
-
+        // user token available here for making requests to the server.
+        System.out.println(userToken);
     }
 
 }
