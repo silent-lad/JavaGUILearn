@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b0e967ec-0f43-4004-821a-6261d29d8e2a" name="Default Changelist" comment="Redefined project structure to accommodate new requirements.">
-      <change afterPath="$PROJECT_DIR$/src/controlpanel/Scheduler.form" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controlpanel/Scheduler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/models/Billboard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/models/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controlpanel/ControlPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlpanel/ControlPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controlpanel/Dashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlpanel/Dashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controlpanel/EditBillboard.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controlpanel/ListBillboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlpanel/ListBillboard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controlpanel/ScheduleBillboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controlpanel/ScheduleBillboard.java" afterDir="false" />
     </list>
     <list id="b44beb3b-e512-4c23-97fd-f90518a74248" name="Revert &quot;Redefined project structure to accommodate new requirements.&quot;" comment="Revert &quot;Redefined project structure to accommodate new requirements.&quot;&#10;&#10;This reverts commit 89f38874" />
@@ -86,9 +81,9 @@
     </configuration>
     <list>
       <item itemvalue="Application.Control Panel" />
-      <item itemvalue="Application.Dashboard" />
       <item itemvalue="Application.Server" />
       <item itemvalue="Application.Viewer" />
+      <item itemvalue="Application.Dashboard" />
     </list>
     <recent_temporary>
       <list>

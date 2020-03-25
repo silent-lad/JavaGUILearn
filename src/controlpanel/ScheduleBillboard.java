@@ -19,7 +19,7 @@ class ScheduleBillboard extends JPanel{
         add(label1);
     }
 
-    public getDataFromServer() {
+    public void getDataFromServer() {
 
     }
 }
