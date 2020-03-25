@@ -15,17 +15,6 @@ import java.awt.Dimension;
  * well as GUI functions.
  */
 public class ControlPanel {
-    // The variables for the GUI objects on startup (the log in frame)
-    private static boolean loggedIn = false;
-    private static boolean quit = false;
-
-    // Poll the resolution of the screen using AWT
-    private static Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-
-    // The constructor
-    public ControlPanel() {
-
-    }
 
     /***
      * Main method is the entry point and runs on program startup.

@@ -4,6 +4,8 @@ package controlpanel;
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
+import java.util.List;
+import java.util.Arrays;
 
 /***
  * The Dahboard class contains the whole BCP logic after the login
@@ -16,22 +18,21 @@ class Dashboard extends JFrame implements ActionListener {
     // Two sub menus to choose from in the top bar
     // Billboard Menu
     static JMenu billboardMenu;
-    // User Menu
-    static JMenu userMenu;
+    static JMenu advancedMenu;
+
     // Logout Button
     static JMenu logoutMenu;
 
     static String userToken;
 
     //Billboard Menu options
-    static JMenuItem createBillboardMenuOption, editBillboardMenuOption, listBillboardMenuOption, scheduleBillboardMenuOption;
+    static JMenuItem createBillboard, listBillboards, scheduleBillboard;
     //User Menu Options
-    static JMenuItem editUserMenuOption,createUserMenuOption;
+    static JMenuItem editUsers,createUser;
     // Logout button
     static JMenuItem logoutButton;
-
-    // a label
-    static JLabel l;
+    // Welcome message for user
+    static JLabel welcomeMsg;
 
     // A variable to store current panel, as the panel is changed when you choose another option from the top menu
     public JPanel currentPanel = new JPanel();
@@ -46,7 +47,13 @@ class Dashboard extends JFrame implements ActionListener {
         // Acknowledgin that the token is recieved from the login window.
         System.out.println(token);
         userToken = token;
-        currentPanel.setBackground(Color.red);
+        System.out.println(token);
+        
+        welcomeMsg = new JLabel();
+        welcomeMsg.setText("Select from the Menu options to begin");
+        welcomeMsg.setAlignmentX(Component.CENTER_ALIGNMENT);
+        currentPanel.add(welcomeMsg);
+        currentPanel.setBackground(Color.lightGray);
         
         //Creating the top menu layout with this
         createMenu();
@@ -62,51 +69,55 @@ class Dashboard extends JFrame implements ActionListener {
     }
 
     public void createMenu(){
-        // create a menubar
+
+        // Create the new menu bar
         menuBar = new JMenuBar();
 
-        // create both the menu menu
-        billboardMenu = new JMenu("Billboard");
-        userMenu = new JMenu("User");
+        // Viewing the list of billboards is available to all permissions
+        billboardMenu = new JMenu("Billboard Options");
+        listBillboards = new JMenuItem("List Billboards"); // Create the menu option
+        listBillboards.addActionListener(this); // Add the listener for mouseclicks
+        billboardMenu.add(listBillboards); // Finally add it to the menu
+
+        // If a permission is found then we include appropriate feature
+        String[]permissionArray = {"Edit Billboards","Schedule Billboards","Edit Users","Schedule Billboards","Create Billboards"};
+        List<String> permissionList = Arrays.asList(permissionArray);
+
+        if (permissionList.contains("Create Billboards")) {
+            createBillboard = new JMenuItem("Create Billboard");
+            createBillboard.addActionListener(this);
+            billboardMenu.add(createBillboard);
+        }
+        // Advanced menu options
+        advancedMenu = new JMenu("More Options");
+        if (permissionList.contains("Schedule Billboards")) {
+            scheduleBillboard = new JMenuItem("Schedule Billboard");
+            scheduleBillboard.addActionListener(this);
+            advancedMenu.add(scheduleBillboard);
+        }
+        if (permissionList.contains("Edit Users")) {
+            editUsers = new JMenuItem("Edit Users");
+            editUsers.addActionListener(this);
+            advancedMenu.add(editUsers);
+        }
+
         logoutMenu = new JMenu("Logout");
 
-        // create menuitems
-        createBillboardMenuOption = new JMenuItem("Create Billboard");
-        editBillboardMenuOption = new JMenuItem("Edit Billboard");
-        listBillboardMenuOption = new JMenuItem("List Billboard");
-        scheduleBillboardMenuOption = new JMenuItem("Schedule Billboard");
-        editUserMenuOption = new JMenuItem("Edit User");
-        createUserMenuOption = new JMenuItem("Create User");
         logoutButton = new JMenuItem("Logout User");
-
-        // add ActionListener to menuItems
-        createBillboardMenuOption.addActionListener(this);
-        editBillboardMenuOption.addActionListener(this);
-        listBillboardMenuOption.addActionListener(this);
-        scheduleBillboardMenuOption.addActionListener(this);
-        editUserMenuOption.addActionListener(this);
-        createUserMenuOption.addActionListener(this);
-
         logoutButton.addActionListener(new LogoutActionListener());
-
-        // add menu options to menu
-        billboardMenu.add(createBillboardMenuOption);
-        billboardMenu.add(editBillboardMenuOption);
-        billboardMenu.add(listBillboardMenuOption);
-        billboardMenu.add(scheduleBillboardMenuOption);
-
-        userMenu.add(editUserMenuOption);
-        userMenu.add(createUserMenuOption);
 
         logoutMenu.add(logoutButton);
 
-        // add menu to menu bar
+        // Add these options to the menu bar
         menuBar.add(billboardMenu);
-        menuBar.add(userMenu);
+        if (permissionList.contains("Schedule Billboards") || permissionList.contains("Edit Users")) {
+            menuBar.add(advancedMenu);
+        }
         menuBar.add(logoutMenu);
 
-        // add menubar to frame
+        // Add the menubar to the parent frame
         setJMenuBar(menuBar);
+
     }
 
     /***
@@ -133,33 +144,27 @@ class Dashboard extends JFrame implements ActionListener {
                 add(currentPanel);
                 setTitle("Create Billboard");
                 break;
-            case "Edit Billboard" :
-                currentPanel = new EditBillboard();
-                currentPanel.setVisible(true);
-                add(currentPanel);
-                setTitle("Edit Billboard");
-                break;
-            case "Schedule Billboard" :
+            case "Schedule Billboards" :
                 currentPanel = new ScheduleBillboard();
                 currentPanel.setVisible(true);
                 add(currentPanel);
                 setTitle("Schedule Billboard");
                 break;
-            case "List Billboard" :
+            case "List Billboards" :
                 currentPanel = new ListBillboard();
                 currentPanel.setVisible(true);
                 setLayout(new BorderLayout());
                 add(BorderLayout.CENTER, new JScrollPane(currentPanel));
                 //add(currentPanel);
-                setTitle("List Billboard");
+                setTitle("List Billboards");
             break;
-            case "Edit User" :
+            case "Edit Users" :
                 currentPanel = new EditUser();
                 currentPanel.setVisible(true);
                 setLayout(new BorderLayout());
                 setSize(800,500);
                 add(BorderLayout.CENTER, new JScrollPane(currentPanel));
-                setTitle("Edit User");
+                setTitle("Edit Users");
             break;
             case "Create User" :
                 currentPanel = new CreateUser(userToken);
@@ -181,12 +186,11 @@ class Dashboard extends JFrame implements ActionListener {
 //    Action Listener for Logout menu option
     private class LogoutActionListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
-            // Logout Logic here
-            // Delete the token and just change the panel back to Login as down below
-            new LoginWindow();
-            // Disposing the Dashboard JFrame as it's work is done.
-            //dispose();
-
+            LoginWindow frame = new LoginWindow();
+            frame.setSize(500, 250);
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);
+            dispose();
         }
     }
 

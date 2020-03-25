@@ -32,6 +32,10 @@ public class ListBillboard extends JPanel {
     private String selectedBillboardImageType = "---";
     private String selectedBillboardImageString = "---";
 
+    private JTextField billboardMessageField;
+    private JTextField billboardInformationField;
+    private JTextField billboardImageStringField;
+
     public ListBillboard() {
         initList();
         initDescriptionPanel();
@@ -61,16 +65,22 @@ public class ListBillboard extends JPanel {
         descriptionPanel = new JPanel();
 
         descriptionPanel.add(new JLabel("Billboard Message"));
-        descriptionPanel.add(new JTextField(selectedBillboardMessage));
+        billboardMessageField = new JTextField(selectedBillboardMessage);
+        billboardMessageField.setSize(billboardMessageField.getPreferredSize());
+        descriptionPanel.add(billboardMessageField);
 
         descriptionPanel.add(new JLabel("Billboard Info"));
-        descriptionPanel.add(new JTextField(selectedBillboardInformation));
+        billboardInformationField = new JTextField(selectedBillboardInformation);
+        billboardInformationField.setSize(billboardInformationField.getPreferredSize());
+        descriptionPanel.add(billboardInformationField);
 
         descriptionPanel.add(new JLabel("ImageType"));
         descriptionPanel.add(new JComboBox(new String[]{"url", "image"}));
 
         descriptionPanel.add(new JLabel("ImageUrl"));
-        descriptionPanel.add(new JTextField(selectedBillboardImageString));
+        billboardImageStringField = new JTextField(selectedBillboardImageString);
+        billboardImageStringField.setSize(billboardImageStringField.getPreferredSize());
+        descriptionPanel.add(billboardImageStringField);
 
         descriptionPanel.add(new JButton("Edit Billboard"));
 
@@ -90,7 +100,7 @@ public class ListBillboard extends JPanel {
             //You have the name of the billboard now query server to get the data
             System.out.println(billboardLabels[billboardList.getSelectedIndex()]);
             // Store the data inside and object and pass it to the follwoing variables to show in display
-            selectedBillboardMessage = "Test data from server";
+            selectedBillboardMessage = billboardLabels[billboardList.getSelectedIndex()];
             selectedBillboardInformation = "Test data from server";
             selectedBillboardImageType = "Test data from server";
             selectedBillboardImageString = "Test data from server";
