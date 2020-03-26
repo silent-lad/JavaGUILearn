@@ -1,5 +1,7 @@
 package controlpanel;
 
+import common.models.User;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -16,16 +18,18 @@ class CreateBillboard extends JPanel implements ActionListener{
     JTextArea informationField;
     JRadioButton urlImage,encodedImage;
     JButton createButton, previewButton;
-    String userToken;
+    User loggedInUser;
+    String token;
 
     /***
      * The Dahboard class extends Jpanel as it will be shown on Dashboard JFrame
      * well as GUI functions.
      * implements ActionListener to listen for form submission
      */
-    CreateBillboard(String token) {
+    CreateBillboard(String token,User loggedInUser) {
 
-        userToken = token;
+        this.token = token;
+        this.loggedInUser = loggedInUser;
 
         formHeading = new JLabel();
         formHeading.setText("Create Billboard");
@@ -102,7 +106,7 @@ class CreateBillboard extends JPanel implements ActionListener{
     }
     public void actionPerformed(ActionEvent ae) {
         // user token available here for making requests to the server.
-        System.out.println(userToken);
+        System.out.println(token);
     }
 
 }

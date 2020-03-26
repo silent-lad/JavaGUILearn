@@ -1,5 +1,7 @@
 package controlpanel;
 
+import common.models.User;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -16,16 +18,18 @@ class CreateUser extends JPanel implements ActionListener {
     JTextField nameField,passwordField;
     JCheckBox scheduleBillboard,editAllBillboards,createBillboard,editUsers;
     JButton createButton;
-    String userToken;
+    String token;
+    User loggedInUser;
 
     /***
      * The CreateUser class extends Jpanel as it will be shown on Dashboard JFrame
      * well as GUI functions.
      * implements ActionListener to listen for form submission
      */
-    CreateUser(String token) {
+    CreateUser(String token,User loggedInUser) {
 
-        userToken = token;
+        this.token = token;
+        this.loggedInUser = loggedInUser;
 
         formHeading = new JLabel();
         formHeading.setText("Create User");
@@ -94,7 +98,7 @@ class CreateUser extends JPanel implements ActionListener {
     }
     public void actionPerformed(ActionEvent ae) {
         // user token available here for making requests to the server.
-        System.out.println(userToken);
+        System.out.println(token);
     }
 
 }

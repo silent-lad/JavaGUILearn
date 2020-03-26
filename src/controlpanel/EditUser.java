@@ -1,5 +1,7 @@
 package controlpanel;
 
+import common.models.User;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -7,12 +9,14 @@ import java.awt.event.*;
 class EditUser extends JPanel{
     int userCount;
     JCheckBox form[][];
-    JButton deleteButtons[];
-    JButton editPassword[];
     String permissions[] = { "User Permission", "EDIT USER", "CREATE BB", "EDIT ALL BB", "SCHEDULE BB", "DELETE USER", "EDIT PASSWORD" };
     String users[] ;
+    String token;
+    User loggedInUser;
 
-    EditUser() {
+    EditUser(String token,User loggedInUser) {
+        this.token = token;
+        this.loggedInUser = loggedInUser;
         //Fetch the users from the db; and populate the local variables
         GetUsers();
 
@@ -38,7 +42,7 @@ class EditUser extends JPanel{
                     } else if(col ==5){
                          add(new JButton("DELETE"));
                     } else {
-                        if(true) //check if the user is himself or admin
+                        if(loggedInUser.isAllowedTo("edit_user")) //check if the user is himself or admin
                         {
                             add(new JButton("EDIT USER"));
                         }else {
@@ -52,6 +56,7 @@ class EditUser extends JPanel{
     }
     public void GetUsers(){
         // This data will come from servers, server connection logic goes here.
+        // Use the USER model instead of this logic.
         int userCountFromServer = 12;
         String userArrayFromServer[] = { "Zeegaroot", "admin", "John",
                 "Matthew", "ahmed", "aziz", "pat",

@@ -1,6 +1,8 @@
 
 package controlpanel;
 
+import common.models.User;
+
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
@@ -13,10 +15,6 @@ import javax.swing.event.ListSelectionListener;
 public class ListBillboard extends JPanel {
 
     private static final Insets EMPTY_INSETS = new Insets(0, 0, 0, 0);
-
-    private static final String DEFAULT_SOURCE_CHOICE_LABEL = "BillBoards";
-
-    private static final String DEFAULT_DEST_CHOICE_LABEL = "BillBoard Description";
 
     private JLabel billboardListLabel = new JLabel("Billboard List");
 
@@ -36,7 +34,12 @@ public class ListBillboard extends JPanel {
     private JTextField billboardInformationField;
     private JTextField billboardImageStringField;
 
-    public ListBillboard() {
+    public String token;
+    public User loggedInUser;
+
+    public ListBillboard(String token,User loggedInUser) {
+        this.token = token;
+        this.loggedInUser = loggedInUser;
         initList();
         initDescriptionPanel();
     }

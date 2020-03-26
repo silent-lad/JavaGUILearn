@@ -1,6 +1,8 @@
 package controlpanel;
 
 
+import common.models.User;
+
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
@@ -33,6 +35,8 @@ class Dashboard extends JFrame implements ActionListener {
     static JMenuItem logoutButton;
     // Welcome message for user
     static JLabel welcomeMsg;
+    // current User
+    User loggedInUser;
 
     // A variable to store current panel, as the panel is changed when you choose another option from the top menu
     public JPanel currentPanel = new JPanel();
@@ -42,12 +46,11 @@ class Dashboard extends JFrame implements ActionListener {
      *
      * @param token
      */
-    Dashboard(String token)
+    Dashboard(String token, User loggedInUser)
     {
         // Acknowledgin that the token is recieved from the login window.
-        System.out.println(token);
         userToken = token;
-        System.out.println(token);
+        this.loggedInUser = loggedInUser;
         
         welcomeMsg = new JLabel();
         welcomeMsg.setText("Select from the Menu options to begin");
@@ -83,19 +86,19 @@ class Dashboard extends JFrame implements ActionListener {
         String[]permissionArray = {"Edit Billboards","Schedule Billboards","Edit Users","Schedule Billboards","Create Billboards"};
         List<String> permissionList = Arrays.asList(permissionArray);
 
-        if (permissionList.contains("Create Billboards")) {
+        if (loggedInUser.isAllowedTo("create_bb")) {
             createBillboard = new JMenuItem("Create Billboard");
             createBillboard.addActionListener(this);
             billboardMenu.add(createBillboard);
         }
         // Advanced menu options
         advancedMenu = new JMenu("More Options");
-        if (permissionList.contains("Schedule Billboards")) {
+        if (loggedInUser.isAllowedTo("schedule_bb")) {
             scheduleBillboard = new JMenuItem("Schedule Billboard");
             scheduleBillboard.addActionListener(this);
             advancedMenu.add(scheduleBillboard);
         }
-        if (permissionList.contains("Edit Users")) {
+        if (loggedInUser.isAllowedTo("edit_user")) {
             editUsers = new JMenuItem("Edit Users");
             editUsers.addActionListener(this);
             advancedMenu.add(editUsers);
@@ -110,7 +113,7 @@ class Dashboard extends JFrame implements ActionListener {
 
         // Add these options to the menu bar
         menuBar.add(billboardMenu);
-        if (permissionList.contains("Schedule Billboards") || permissionList.contains("Edit Users")) {
+        if (loggedInUser.isAllowedTo("schedule_bb") || loggedInUser.isAllowedTo("edit_user")) {
             menuBar.add(advancedMenu);
         }
         menuBar.add(logoutMenu);
@@ -138,20 +141,20 @@ class Dashboard extends JFrame implements ActionListener {
         switch(s){
             case "Create Billboard" :
                 // Changing the value of currentPanel, passing user token to enable it to make requests.
-                currentPanel = new CreateBillboard(userToken);
+                currentPanel = new CreateBillboard(userToken,loggedInUser);
                 currentPanel.setVisible(true);
                 // Adding it to the JFrame
                 add(currentPanel);
                 setTitle("Create Billboard");
                 break;
-            case "Schedule Billboards" :
-                currentPanel = new ScheduleBillboard();
+            case "Schedule Billboard" :
+                currentPanel = new ScheduleBillboard(userToken,loggedInUser);
                 currentPanel.setVisible(true);
                 add(currentPanel);
                 setTitle("Schedule Billboard");
                 break;
             case "List Billboards" :
-                currentPanel = new ListBillboard();
+                currentPanel = new ListBillboard(userToken,loggedInUser);
                 currentPanel.setVisible(true);
                 setLayout(new BorderLayout());
                 add(BorderLayout.CENTER, new JScrollPane(currentPanel));
@@ -159,7 +162,7 @@ class Dashboard extends JFrame implements ActionListener {
                 setTitle("List Billboards");
             break;
             case "Edit Users" :
-                currentPanel = new EditUser();
+                currentPanel = new EditUser(userToken,loggedInUser);
                 currentPanel.setVisible(true);
                 setLayout(new BorderLayout());
                 setSize(800,500);
@@ -167,7 +170,7 @@ class Dashboard extends JFrame implements ActionListener {
                 setTitle("Edit Users");
             break;
             case "Create User" :
-                currentPanel = new CreateUser(userToken);
+                currentPanel = new CreateUser(userToken,loggedInUser);
                 currentPanel.setVisible(true);
                 setLayout(new BorderLayout());
                 add(BorderLayout.CENTER, new JScrollPane(currentPanel));

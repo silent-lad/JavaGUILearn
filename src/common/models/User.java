@@ -7,12 +7,6 @@ public class User {
     public String u_id;
     public String[] permissions;
 
-    User(String name,String[] permissions,String u_id){
-            this.u_id = u_id;
-            this.name = name;
-            this.permissions = permissions;
-    }
-
     public void getUserByName(String name){
         //Query the user table by name and create a user object
 

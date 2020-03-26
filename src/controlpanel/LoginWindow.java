@@ -1,5 +1,7 @@
 package controlpanel;
 
+import common.models.User;
+
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
@@ -74,8 +76,10 @@ class LoginWindow extends JFrame implements ActionListener {
 
                 if (username.equals("") && password.equals("")) {
                         String token = "sdfasdf";
+                        User loggedInUser = new User();
+                        loggedInUser.getUserByName(username);
                         //passing mock token to Dashboard, so that it can make requests to server
-                        new Dashboard(token);
+                        new Dashboard(token,loggedInUser);
                         // Disposing the Login JFrame as it's work is done.
                         dispose();
 

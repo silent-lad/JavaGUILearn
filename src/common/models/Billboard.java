@@ -1,6 +1,9 @@
 package common.models;
 
 import common.networking.Message;
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.temporal.ChronoUnit;
 
 import java.text.MessageFormat;
 
@@ -11,7 +14,7 @@ public class Billboard {
     public String imageString;
     public String userId;
     public Boolean isUrl;
-    public String schedule_id;
+    public String s_id;
 
     public void getBillboardByBId(String b_id){
         //Query the bilboard table by b_id and create a billboard object
@@ -29,7 +32,14 @@ public class Billboard {
          this.imageString = imageString_from_server;
          this.userId = userId_from_server;
          this.isUrl = isUrl_from_server;
-         this.schedule_id = schedule_id_from_server;
+         this.s_id = schedule_id_from_server;
+    }
+
+    public Boolean isScheduledFor(int numberOfDaysFromToday){
+        // Used to find if the function is scheduled for a particular number of days after today.
+        Schedule scheduleForThisBillboard = new Schedule();
+        scheduleForThisBillboard.getScheduleByBId(this.s_id);
+        return ChronoUnit.DAYS.between(LocalDate.now(),scheduleForThisBillboard.end_time) >= 0 && LocalDate.now().isAfter(scheduleForThisBillboard.start_time);
     }
 
     public String createXml(){
