@@ -17,8 +17,8 @@ public class Schedule {
         // sample data from server
         String b_id_from_server = "";
         int showDuration_from_server = 3600; // Duration for which it is to be shown on the billboard at one time;
-        LocalDate end_time_from_server = LocalDate.of(2000, 11, 21); ;
-        LocalDate start_time_from_server = LocalDate.of(2000, 11, 21); ;
+        LocalDate end_time_from_server = LocalDate.of(2020, 3, 28); ;
+        LocalDate start_time_from_server = LocalDate.of(2020, 3, 30); ;
         Boolean is_recurring_from_server = true;
         int recur_period_from_server = 7200; //recur_period is to be stored in milliseconds;
 

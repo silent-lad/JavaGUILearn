@@ -22,12 +22,11 @@ class CreateUser extends JPanel implements ActionListener {
     User loggedInUser;
 
     /***
-     * The CreateUser class extends Jpanel as it will be shown on Dashboard JFrame
+     * The CreateUser class extends JPanel as it will be shown on Dashboard JFrame
      * well as GUI functions.
      * implements ActionListener to listen for form submission
      */
-    CreateUser(String token,User loggedInUser) {
-
+    CreateUser(String token,User loggedInUser,JPanel currentPanel) {
         this.token = token;
         this.loggedInUser = loggedInUser;
 
@@ -99,6 +98,7 @@ class CreateUser extends JPanel implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         // user token available here for making requests to the server.
         System.out.println(token);
+
     }
 
 }

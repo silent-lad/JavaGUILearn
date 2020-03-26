@@ -170,7 +170,7 @@ class Dashboard extends JFrame implements ActionListener {
                 setTitle("Edit Users");
             break;
             case "Create User" :
-                currentPanel = new CreateUser(userToken,loggedInUser);
+                currentPanel = new CreateUser(userToken,loggedInUser,currentPanel);
                 currentPanel.setVisible(true);
                 setLayout(new BorderLayout());
                 add(BorderLayout.CENTER, new JScrollPane(currentPanel));
